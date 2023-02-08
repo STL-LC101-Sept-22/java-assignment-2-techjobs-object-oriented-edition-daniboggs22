@@ -26,19 +26,20 @@ public class Employer {
     }
 
     @Override
-    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
+    public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Employer)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Employer employer = (Employer) o;
-        return getId() == employer.getId();
+        return id == employer.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId());
+        return Objects.hash(id);
     }
 
-    // Getters and Setters:
+
+// Getters and Setters:
 
     public int getId() {
         return id;
