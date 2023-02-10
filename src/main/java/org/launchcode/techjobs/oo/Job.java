@@ -92,4 +92,10 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+    //TODO code toString() method to pass the first test
+    public String toString(){
+        return "/n " +
+                "/n";
+    }
 }

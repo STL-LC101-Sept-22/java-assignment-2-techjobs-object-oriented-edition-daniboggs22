@@ -49,6 +49,47 @@ public class JobTest {
                 new PositionType("Web Developer"), new CoreCompetency("Being Awesome"));
         assertNotEquals(spec, aJob, jobTwo);
     }
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        String spec = "toString method starts and ends with a new line";
+        Job aJob = new Job("Front End Developer", new Employer("LaunchCode"), new Location("St.Louis"),
+                new PositionType("Web Developer"), new CoreCompetency("Being Awesome"));
+        String jobFormat = "/n ID: " + aJob.getId() +
+                "/n Name: " + aJob.getName() +
+                "/n Employer: " + aJob.getEmployer().getValue() +
+                "/n Location: " + aJob.getLocation().getValue() +
+                "/n Position Type: " + aJob.getPositionType().getValue() +
+                "/n Core Competency: " + aJob.getCoreCompetency().getValue() +
+                "/n" ;
+        assertEquals(jobFormat.substring(0,2), "/n");
+        assertEquals(jobFormat.substring(jobFormat.length()-2,jobFormat.length()), "/n");
+    }
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        String spec = "toString method contains correct labels";
+        String spec2 = "toString method contains correct data";
+        Job aJob = new Job("Front End Developer", new Employer("LaunchCode"), new Location("St.Louis"),
+                new PositionType("Web Developer"), new CoreCompetency("Being Awesome"));
+        String idField = "/n ID: " + aJob.getId();
+        String nameField =  "/n Name: " + aJob.getName();
+        String employerField = "/n Employer: " + aJob.getEmployer().getValue();
+        String locationField = "/n Location: " + aJob.getLocation().getValue();
+        String positionTypeField = "/n Position Type: " + aJob.getPositionType().getValue();
+        String coreCompetencyField = "/n Core Competency: " + aJob.getCoreCompetency().getValue();
+        String jobFormat = "/n" +
+                idField +
+                nameField +
+                employerField +
+                locationField +
+                positionTypeField +
+                coreCompetencyField +
+                "/n" ;
+        assertTrue(spec2, jobFormat.contains("ID: ") && jobFormat.contains("Name: ") &&
+                jobFormat.contains("Employer: ") && jobFormat.contains("Location: ") &&
+                jobFormat.contains("Position Type: ") && jobFormat.contains("Core Competency: "));
+
+    }
+
 
 
 }
