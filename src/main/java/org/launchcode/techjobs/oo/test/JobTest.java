@@ -6,8 +6,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.launchcode.techjobs.oo.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 
 /**
@@ -21,7 +20,7 @@ public class JobTest {
         String spec = "Test the empty job constructor: the ids of two new job objects should not be equal.";
         Job test_job = new Job();
         Job job_two = new Job();
-        Assert.assertNotEquals(spec, test_job.getId(), job_two.getId());
+        assertNotEquals(spec, test_job.getId(), job_two.getId());
     }
     @Test
     public void testJobConstructorSetsAllFields(){
@@ -40,12 +39,15 @@ public class JobTest {
         assertEquals(spec, aJob.getLocation().getValue(), "Desert");
         assertEquals(spec, aJob.getPositionType().getValue(), "Quality control");
         assertEquals(spec, aJob.getCoreCompetency().getValue(), "Persistence");
-
-
-
-
-        //assertEquals(spec, Employer.getValue(),"ACME");
-//        assertTrue(Employer.getValue().equals("ACME"));
+    }
+    @Test
+    public void testJobsForEquality(){
+        String spec = "Two job objects are Not equal if all fields are identical except their id values.";
+        Job aJob = new Job("Front End Developer", new Employer("LaunchCode"), new Location("St.Louis"),
+                new PositionType("Web Developer"), new CoreCompetency("Being Awesome"));
+        Job jobTwo = new Job("Front End Developer", new Employer("LaunchCode"), new Location("St.Louis"),
+                new PositionType("Web Developer"), new CoreCompetency("Being Awesome"));
+        assertNotEquals(spec, aJob, jobTwo);
     }
 
 
