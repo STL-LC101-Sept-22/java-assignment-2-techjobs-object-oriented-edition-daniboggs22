@@ -122,11 +122,11 @@ public class Job {
         }
 
         String idField = "ID: " + this.getId();
-        String nameField = "\n Name: " + this.getName();
-        String employerField = "\n Employer: " + this.getEmployer().getValue();
-        String locationField = "\n Location: " + this.getLocation().getValue();
-        String positionTypeField = "\n Position Type: " + this.getPositionType().getValue();
-        String coreCompetencyField = "\n Core Competency: " + this.getCoreCompetency().getValue();
+        String nameField = "\nName: " + this.getName();
+        String employerField = "\nEmployer: " + this.getEmployer().getValue();
+        String locationField = "\nLocation: " + this.getLocation().getValue();
+        String positionTypeField = "\nPosition Type: " + this.getPositionType().getValue();
+        String coreCompetencyField = "\nCore Competency: " + this.getCoreCompetency().getValue();
 
         jobFormat = "\n" + idField + nameField + employerField + locationField + positionTypeField + coreCompetencyField +"\n";
         return jobFormat;
