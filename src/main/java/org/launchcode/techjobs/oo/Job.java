@@ -94,8 +94,45 @@ public class Job {
     }
 
     //TODO code toString() method to pass the first test
-    public String toString(){
-        return "/n " +
-                "/n";
+    //TODO see if I can create a loop to go through each field in the job object, get the label and add the data for the
+    //field
+
+
+    public String toString() {
+
+//TODO rework the fields with if statements += this.getId() if the field is not empty. if empty, add "Data not available"
+        //TODO add all of the fields together to return to user.
+        String jobFormat = " ";
+        String errMsg = "Data not available";
+
+        if (name.equals("")) {
+              name = errMsg;
+        }
+        if (employer.getValue().equals("") || employer.getValue() == null) {
+          employer.setValue(errMsg);
+        }
+        if(location.getValue().equals("") || location.getValue() == null){
+            location.setValue(errMsg);
+        }
+        if(positionType.getValue().equals("") || positionType.getValue() == null) {
+            positionType.setValue(errMsg);
+        }
+        if(coreCompetency.getValue().equals("") || coreCompetency.getValue() == null) {
+            coreCompetency.setValue(errMsg);
+        }
+
+        String idField = "ID: " + this.getId();
+        String nameField = "\n Name: " + this.getName();
+        String employerField = "\n Employer: " + this.getEmployer().getValue(); //Grabbing the employer value for the last job and applying it to all 3 jobs
+        String locationField = "\n Location: " + this.getLocation().getValue();
+        String positionTypeField = "\n Position Type: " + this.getPositionType().getValue();
+        String coreCompetencyField = "\n Core Competency: " + this.getCoreCompetency().getValue();
+
+        jobFormat = "\n" + idField + nameField + employerField + locationField + positionTypeField + coreCompetencyField +"\n";
+        return jobFormat;
+        }
+
     }
-}
+
+
+
