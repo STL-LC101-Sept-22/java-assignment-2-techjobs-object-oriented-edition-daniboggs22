@@ -123,7 +123,7 @@ public class Job {
 
         String idField = "ID: " + this.getId();
         String nameField = "\n Name: " + this.getName();
-        String employerField = "\n Employer: " + this.getEmployer().getValue(); //Grabbing the employer value for the last job and applying it to all 3 jobs
+        String employerField = "\n Employer: " + this.getEmployer().getValue();
         String locationField = "\n Location: " + this.getLocation().getValue();
         String positionTypeField = "\n Position Type: " + this.getPositionType().getValue();
         String coreCompetencyField = "\n Core Competency: " + this.getCoreCompetency().getValue();

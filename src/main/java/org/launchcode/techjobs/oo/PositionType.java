@@ -20,7 +20,7 @@ public class PositionType {
 
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
     public String toString() {
-        return "data stored in value: " + value;
+        return value;
 
     }
 
