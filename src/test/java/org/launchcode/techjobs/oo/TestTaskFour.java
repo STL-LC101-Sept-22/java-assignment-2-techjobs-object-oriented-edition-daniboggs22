@@ -83,6 +83,7 @@ public class TestTaskFour extends AbstractTest {
 
         new Expectations() {{
             Assert.assertTrue(anyBoolean); minTimes = 5;
+
             Assert.assertEquals(anyString, anyString); minTimes = 5;
         }};
 
