@@ -118,7 +118,7 @@ public class Job {
             positionType.setValue(errMsg);
         }
         if(coreCompetency.getValue().equals("") || coreCompetency.getValue() == null) {
-            coreCompetency.setValue(errMsg);
+            coreCompetency.setValue("Data not available");
         }
 
         String idField = "ID: " + this.getId();
@@ -128,7 +128,7 @@ public class Job {
         String positionTypeField = "\nPosition Type: " + this.getPositionType().getValue();
         String coreCompetencyField = "\nCore Competency: " + this.getCoreCompetency().getValue();
 
-        jobFormat = "\n" + idField + nameField + employerField + locationField + positionTypeField + coreCompetencyField +"\n";
+        jobFormat = "\n" + idField + nameField + employerField + locationField + positionTypeField + coreCompetencyField + "\n";
         return jobFormat;
         }
 

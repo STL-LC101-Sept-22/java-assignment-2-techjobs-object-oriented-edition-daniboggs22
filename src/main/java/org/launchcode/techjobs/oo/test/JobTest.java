@@ -55,8 +55,8 @@ public class JobTest {
         Job aJob = new Job("Front End Developer", new Employer("LaunchCode"), new Location("St.Louis"),
                 new PositionType("Web Developer"), new CoreCompetency("Being Awesome"));
       String jobFormat = aJob.toString();
-        assertEquals(spec, jobFormat.substring(0,1), "\n");
-        assertEquals(jobFormat.substring(jobFormat.length()-1,jobFormat.length()), "\n");
+        assertEquals(spec, jobFormat.substring(0,1), '\n');
+        assertEquals(jobFormat.substring(jobFormat.length()-1,jobFormat.length()), '\n');
     }
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
@@ -81,8 +81,10 @@ public class JobTest {
         String spec = "If a field is empty 'Data not available' is included after the label";
         Job aJob = new Job("Front End Developer", new Employer("LaunchCode"), new Location("St.Louis"),
                 new PositionType("Web Developer"), new CoreCompetency(""));
-        String jobFormat = aJob.toString();
-        assertTrue(spec, jobFormat.contains("Core Competency: " + "Data not available"));
+        aJob.toString();
+        String expected = aJob.getCoreCompetency().getValue().toString();
+       System.out.println(expected);
+        assertEquals(spec, expected,"Data not available");
 
     }
 
