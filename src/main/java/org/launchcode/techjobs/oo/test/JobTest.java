@@ -31,11 +31,11 @@ public class JobTest {
         assertTrue(aJob.getLocation() instanceof Location);
         assertTrue(aJob.getPositionType() instanceof PositionType);
         assertTrue(aJob.getCoreCompetency() instanceof CoreCompetency);
-        assertEquals(spec, aJob.getName(), "Product tester");
-        assertEquals(spec, aJob.getEmployer().getValue(), "ACME");
-        assertEquals(spec, aJob.getLocation().getValue(), "Desert");
-        assertEquals(spec, aJob.getPositionType().getValue(), "Quality control");
-        assertEquals(spec, aJob.getCoreCompetency().getValue(), "Persistence");
+        assertEquals(aJob.getName(), "Product tester");
+        assertEquals(aJob.getEmployer().getValue(), "ACME");
+        assertEquals(aJob.getLocation().getValue(), "Desert");
+        assertEquals(aJob.getPositionType().getValue(), "Quality control");
+        assertEquals(aJob.getCoreCompetency().getValue(), "Persistence");
     }
     @Test
     public void testJobsForEquality(){
