@@ -52,8 +52,9 @@ public class JobTest {
         Job aJob = new Job("Front End Developer", new Employer("LaunchCode"), new Location("St.Louis"),
                 new PositionType("Web Developer"), new CoreCompetency("Being Awesome"));
       String jobFormat = aJob.toString();
-        assertEquals(jobFormat.substring(0,1), '\n');
-        assertEquals(jobFormat.substring(jobFormat.length()-1,jobFormat.length()), '\n');
+      System.out.println();
+        assertEquals(jobFormat.charAt(0), '\n');
+        assertEquals(jobFormat.charAt(jobFormat.length()-1), '\n');
     }
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
