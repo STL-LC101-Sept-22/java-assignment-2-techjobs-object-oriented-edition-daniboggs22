@@ -52,25 +52,19 @@ public class JobTest {
         Job aJob = new Job("Front End Developer", new Employer("LaunchCode"), new Location("St.Louis"),
                 new PositionType("Web Developer"), new CoreCompetency("Being Awesome"));
       String jobFormat = aJob.toString();
-        assertEquals(spec, jobFormat.substring(0,1), '\n');
+        assertEquals(jobFormat.substring(0,1), '\n');
         assertEquals(jobFormat.substring(jobFormat.length()-1,jobFormat.length()), '\n');
     }
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
-        String spec = "toString method contains correct labels";
-        String spec2 = "toString method contains correct data";
         Job aJob = new Job("Front End Developer", new Employer("LaunchCode"), new Location("St.Louis"),
                 new PositionType("Web Developer"), new CoreCompetency("Being Awesome"));
         String jobFormat = aJob.toString();
-
-        assertTrue(spec, jobFormat.contains("ID: ") && jobFormat.contains("Name: ") &&
-                jobFormat.contains("Employer: ") && jobFormat.contains("Location: ") &&
-                jobFormat.contains("Position Type: ") && jobFormat.contains("Core Competency: "));
-
-        assertTrue(spec2, jobFormat.contains(aJob.getName()) && jobFormat.contains(aJob.getEmployer().getValue())
-                && jobFormat.contains(aJob.getLocation().getValue()) && jobFormat.contains(aJob.getPositionType().getValue())
-                && jobFormat.contains(aJob.getCoreCompetency().getValue()));
-
+        assertEquals(jobFormat,  "\n" + "\nName: " + aJob.getName() +
+      "\nEmployer: " + aJob.getEmployer().getValue() +
+        "\nLocation: " + aJob.getLocation().getValue() +
+       "\nPosition Type: " + aJob.getPositionType().getValue() +
+        "\nCore Competency: " + aJob.getCoreCompetency().getValue() + "\n");
     }
    //TODO If a field is empty, the method should add, 'Data not available' after the label.
    @Test
