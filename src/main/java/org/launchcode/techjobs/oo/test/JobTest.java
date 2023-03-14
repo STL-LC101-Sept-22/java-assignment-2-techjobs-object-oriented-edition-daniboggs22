@@ -1,11 +1,8 @@
 package org.launchcode.techjobs.oo.test;
-
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.launchcode.techjobs.oo.*;
-
 import static org.junit.Assert.*;
 
 
@@ -84,7 +81,7 @@ public class JobTest {
         aJob.toString();
         String expected = aJob.getCoreCompetency().getValue().toString();
        System.out.println(expected);
-        assertEquals(spec, expected,"Data not available");
+        assertEquals(expected,"Data not available");
 
     }
 
