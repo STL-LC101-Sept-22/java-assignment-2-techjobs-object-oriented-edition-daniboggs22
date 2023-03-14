@@ -21,7 +21,6 @@ public class JobTest {
     }
     @Test
     public void testJobConstructorSetsAllFields(){
-        String spec = "Test the full job constructor: the classes and values are set correctly";
         Job aJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 //TODO Use assertTrue and assertEquals statements to test that the constructor correctly
@@ -39,16 +38,14 @@ public class JobTest {
     }
     @Test
     public void testJobsForEquality(){
-        String spec = "Two job objects are Not equal if all fields are identical except their id values.";
         Job aJob = new Job("Front End Developer", new Employer("LaunchCode"), new Location("St.Louis"),
                 new PositionType("Web Developer"), new CoreCompetency("Being Awesome"));
         Job jobTwo = new Job("Front End Developer", new Employer("LaunchCode"), new Location("St.Louis"),
                 new PositionType("Web Developer"), new CoreCompetency("Being Awesome"));
-        assertNotEquals(spec, aJob, jobTwo);
+        assertFalse(aJob.equals(jobTwo));
     }
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
-        String spec = "toString method starts and ends with a new line";
         Job aJob = new Job("Front End Developer", new Employer("LaunchCode"), new Location("St.Louis"),
                 new PositionType("Web Developer"), new CoreCompetency("Being Awesome"));
       String jobFormat = aJob.toString();
@@ -70,15 +67,11 @@ public class JobTest {
    //TODO If a field is empty, the method should add, 'Data not available' after the label.
    @Test
     public void testToStringHandlesEmptyField() {
-        String spec = "If a field is empty 'Data not available' is included after the label";
         Job aJob = new Job("Front End Developer", new Employer("LaunchCode"), new Location("St.Louis"),
                 new PositionType("Web Developer"), new CoreCompetency(""));
         aJob.toString();
         String expected = aJob.getCoreCompetency().getValue().toString();
-       System.out.println(expected);
         assertEquals(expected,"Data not available");
-
     }
-
 }
 
