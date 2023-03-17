@@ -4,15 +4,10 @@ import java.util.Objects;
 
 public class Employer extends JobField {
 
-//    public Employer() {
-//        super();
-//
-//    }
     public Employer(String value) {
         super(value);
     }
 
-    // Custom toString, equals, and hashCode methods:
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
